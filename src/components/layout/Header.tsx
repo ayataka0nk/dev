@@ -1,13 +1,21 @@
 import { theme } from '../../theme'
+import Link from 'next/link'
 
 export const Header: React.FC = () => {
   return (
     <div className="header">
-      <div className="header-text">Naoto Kamba: Tech Blog</div>
+      <Link href="/" passHref>
+        <a>
+          <div className="header-text">Naoto Kamba: Tech Blog</div>
+        </a>
+      </Link>
       <style jsx>
         {`
           .header-text {
+            display: inline-block;
             color: ${theme.text.inverted};
+            font-weight: 600;
+            padding: 10px;
           }
           .header {
             box-sizing: border-box;
