@@ -69,3 +69,17 @@ export const readAllTags = async () => {
     tags
   )
 }
+
+export const readMatter = async (slug: string) => {
+  const mdInfo = await analyzeMarkdown(slug)
+  return {
+    title: mdInfo.title,
+    published: mdInfo.published,
+    tags: mdInfo.tags,
+    path: path.join('/posts/' + slug),
+  }
+}
+
+export const readMatters = async (slugs: string[]) => {
+  return await Promise.all(slugs.map((slug) => readMatter(slug)))
+}
