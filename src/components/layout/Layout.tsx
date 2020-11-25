@@ -9,6 +9,8 @@ export const Layout: React.FC = (props) => {
       <style jsx>{`
         main {
           max-width: 960px;
+          margin: 0 auto;
+          padding: 0 13px;
         }
       `}</style>
       <style jsx global>
