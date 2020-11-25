@@ -10,7 +10,7 @@ export const Layout: React.FC = (props) => {
         main {
           max-width: 960px;
           margin: 0 auto;
-          padding: 0 13px;
+          padding: 13px;
         }
       `}</style>
       <style jsx global>
