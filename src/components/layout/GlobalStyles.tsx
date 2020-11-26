@@ -1,4 +1,5 @@
 import css from 'styled-jsx/css'
+import { theme } from 'theme'
 
 export const GlobalStyles = css.global`
   html,
@@ -169,5 +170,11 @@ export const GlobalStyles = css.global`
 
   * {
     box-sizing: border-box;
+  }
+  html {
+    background: ${theme.background.inverted};
+  }
+  body {
+    background: ${theme.background.primary};
   }
 `

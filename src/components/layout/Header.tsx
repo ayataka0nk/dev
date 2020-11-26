@@ -21,6 +21,7 @@ export const Header: React.FC = () => {
             box-sizing: border-box;
             padding: 10px;
             background-color: ${theme.background.inverted};
+            height: 56px;
           }
         `}
       </style>
