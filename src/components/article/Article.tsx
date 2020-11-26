@@ -1,4 +1,5 @@
 import { ArticleContent } from './ArticleContent'
+import { SocialShares } from './SocialShare'
 import { Tag, Tags, TagsWithLabel } from './Tag'
 
 type ArticleProps = {
@@ -15,6 +16,8 @@ export const Article: React.FC<ArticleProps> = (props) => {
       <ArticleContent content={props.content} />
       <hr />
       <TagsWithLabel tags={props.tags} />
+      <hr />
+      <SocialShares url={props.url} />
     </div>
   )
 }
