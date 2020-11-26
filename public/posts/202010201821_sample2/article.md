@@ -1,6 +1,6 @@
 ---
 title: サンプル2
-published: 2020-10-17
+published: 2020-10-18 11:11:00
 tags: foo,bar
 ---
 
@@ -52,7 +52,7 @@ function HelloMessage({ name }) {
 
 ReactDOM.render(
   <HelloMessage name="Taylor" />,
-  document.getElementById("container")
+  document.getElementById('container')
 )
 ```
 
