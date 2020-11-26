@@ -1,8 +1,12 @@
-import { Tags } from 'components/article/Tag'
+import { Tags, TagsWithLabel } from 'components/article/Tag'
 import { ArticleList } from 'components/ArticleList'
 import { readAllTags, readMatters, readSlugs } from 'foundations/MdLoader'
 import { GetStaticProps, NextPage } from 'next'
 import { Layout } from '../components/layout/Layout'
+
+export const config = {
+  amp: true,
+}
 
 export const getStaticProps: GetStaticProps = async () => {
   const slugs = readSlugs()
@@ -22,18 +26,8 @@ const Home: NextPage<HomeProps> = (props) => {
   return (
     <Layout>
       <ArticleList matters={props.matters} />
-      <div className="tags">
-        <label>Tags:</label>
-        <Tags tags={props.allTags} />
-      </div>
-      <style jsx>
-        {`
-          .tags {
-            padding: 10px 0px;
-            display: flex;
-          }
-        `}
-      </style>
+      <hr />
+      <TagsWithLabel tags={props.allTags} />
     </Layout>
   )
 }

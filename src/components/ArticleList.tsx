@@ -7,6 +7,10 @@ type ArticleListProps = {
 export const ArticleList: React.FC<ArticleListProps> = (props) => {
   return (
     <div>
+      <div className="article">
+        <div className="title">記事タイトル</div>
+        <div className="published">投稿日時</div>
+      </div>
       {props.matters.map((matter, index) => {
         return (
           <div className="article" key={index}>

@@ -1,5 +1,5 @@
 import { ArticleContent } from './ArticleContent'
-import { Tag, Tags } from './Tag'
+import { Tag, Tags, TagsWithLabel } from './Tag'
 
 type ArticleProps = {
   url: string
@@ -13,7 +13,8 @@ export const Article: React.FC<ArticleProps> = (props) => {
   return (
     <div>
       <ArticleContent content={props.content} />
-      <Tags tags={props.tags} />
+      <hr />
+      <TagsWithLabel tags={props.tags} />
     </div>
   )
 }

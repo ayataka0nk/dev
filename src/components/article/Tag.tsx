@@ -21,3 +21,20 @@ export const Tags: React.FC<{ tags: string[] }> = (props) => {
     </div>
   )
 }
+
+export const TagsWithLabel: React.FC<{ tags: string[] }> = (props) => {
+  return (
+    <div className="tags">
+      <label>Tags:</label>
+      <Tags tags={props.tags} />
+      <style jsx>
+        {`
+          .tags {
+            padding: 10px 0px;
+            display: flex;
+          }
+        `}
+      </style>
+    </div>
+  )
+}

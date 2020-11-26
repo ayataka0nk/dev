@@ -1,7 +1,12 @@
+import { TagsWithLabel } from 'components/article/Tag'
 import { ArticleList } from 'components/ArticleList'
 import { Layout } from 'components/layout/Layout'
 import { readAllTags, readMatters, readSlugs } from 'foundations/MdLoader'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+
+export const config = {
+  amp: true,
+}
 
 export const getStaticPaths: GetStaticPaths<{ tag: string }> = async () => {
   const paths = (await readAllTags()).map((tag) => ({
@@ -23,11 +28,12 @@ export const getStaticProps: GetStaticProps<
     const matters = (await readMatters(slugs)).filter((matter) =>
       matter.tags.includes(tag)
     )
+    const tags = await readAllTags()
     return {
-      props: { slugs, matters, tag },
+      props: { slugs, matters, tag, tags },
     }
   } else {
-    return { props: { slugs: [], matters: [], tag: '' } }
+    return { props: { slugs: [], matters: [], tag: '', tags: [] } }
   }
 }
 
@@ -35,6 +41,7 @@ type TagsPageProps = {
   slugs: string[]
   matters: { title: string; published: string; tags: string[]; path: string }[]
   tag: string
+  tags: string[]
 }
 
 const TagsPage: NextPage<TagsPageProps> = (props) => {
@@ -45,6 +52,8 @@ const TagsPage: NextPage<TagsPageProps> = (props) => {
         <div>{props.tag}</div>
       </div>
       <ArticleList matters={props.matters} />
+      <hr />
+      <TagsWithLabel tags={props.tags} />
       <style jsx>{`
         .selected-tag {
           display: flex;
