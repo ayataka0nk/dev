@@ -1,6 +1,6 @@
 ---
 title: Markdown で記事を管理できる Amp 対応ブログを Next.js により Static Generation する
-published: 2020-11-26T23:00:00.000+09:00
+published: 2020-11-26 23:00:00
 tags: react,next.js,markdown,amp
 ---
 
