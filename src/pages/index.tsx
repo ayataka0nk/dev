@@ -1,7 +1,9 @@
 import { Tags, TagsWithLabel } from 'components/article/Tag'
 import { ArticleList } from 'components/ArticleList'
+import { BASE_URL } from 'foundations/Constants'
 import { readAllTags, readMatters, readSlugs } from 'foundations/MdLoader'
 import { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
 import { Layout } from '../components/layout/Layout'
 
 export const config = {
@@ -25,6 +27,10 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = (props) => {
   return (
     <Layout>
+      <Head>
+        <link rel="canonical" href={BASE_URL} />
+        <title>naoto-kamba.dev</title>
+      </Head>
       <ArticleList matters={props.matters} />
       <hr />
       <TagsWithLabel tags={props.allTags} />

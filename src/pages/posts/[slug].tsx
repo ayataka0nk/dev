@@ -65,7 +65,7 @@ const Slug: NextPage<SlugProps> = (props) => {
     <Layout>
       <Head>
         <link rel="canonical" href={url} />
-        <title>{props.title}</title>
+        <title>naoto-kamba.dev;{props.title}</title>
       </Head>
       <Article
         title={props.title}

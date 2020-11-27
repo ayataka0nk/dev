@@ -1,8 +1,10 @@
 import { TagsWithLabel } from 'components/article/Tag'
 import { ArticleList } from 'components/ArticleList'
 import { Layout } from 'components/layout/Layout'
+import { BASE_URL } from 'foundations/Constants'
 import { readAllTags, readMatters, readSlugs } from 'foundations/MdLoader'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
 
 export const config = {
   amp: true,
@@ -45,8 +47,13 @@ type TagsPageProps = {
 }
 
 const TagsPage: NextPage<TagsPageProps> = (props) => {
+  const url = BASE_URL + '/tags/' + props.tag
   return (
     <Layout>
+      <Head>
+        <link rel="canonical" href={url} />
+        <title>naoto-kamba.dev;Tag:{props.tag}</title>
+      </Head>
       <div className="selected-tag">
         <label className="label">Tag:</label>
         <div>{props.tag}</div>
