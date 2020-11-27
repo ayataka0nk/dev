@@ -1,5 +1,4 @@
 import { theme } from '../../theme'
-import Link from 'next/link'
 
 export const Footer: React.FC = () => {
   return (

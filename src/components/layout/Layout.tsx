@@ -1,4 +1,3 @@
-import { theme } from 'theme'
 import { Footer } from './Footer'
 import { GlobalStyles } from './GlobalStyles'
 import { Header } from './Header'
