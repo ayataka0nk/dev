@@ -1,6 +1,6 @@
 import { ArticleContent } from './ArticleContent'
 import { SocialShares } from './SocialShare'
-import { Tag, Tags, TagsWithLabel } from './Tag'
+import { TagsWithLabel } from './Tag'
 
 type ArticleProps = {
   url: string
@@ -13,6 +13,7 @@ type ArticleProps = {
 export const Article: React.FC<ArticleProps> = (props) => {
   return (
     <div>
+      <div>更新日時: {props.published}</div>
       <ArticleContent content={props.content} />
       <hr />
       <TagsWithLabel tags={props.tags} />
