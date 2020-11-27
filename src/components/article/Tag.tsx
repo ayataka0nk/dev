@@ -1,7 +1,25 @@
 import Link from 'next/link'
 
 export const Tag: React.FC<{ name: string; path: string }> = (props) => {
-  return <Link href={props.path}>{props.name}</Link>
+  return (
+    <>
+      <Link href={props.path}>
+        <div className="link">{props.name}</div>
+      </Link>
+      <style jsx>{`
+        .link {
+          color: rgb(3, 102, 214);
+          background-color: rgb(234, 245, 255);
+          padding: 3px 8px;
+          border-radius: 7px;
+        }
+        .link:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      `}</style>
+    </>
+  )
 }
 
 export const Tags: React.FC<{ tags: string[] }> = (props) => {
@@ -32,6 +50,7 @@ export const TagsWithLabel: React.FC<{ tags: string[] }> = (props) => {
           .tags {
             padding: 10px 0px;
             display: flex;
+            align-items: center;
           }
         `}
       </style>
