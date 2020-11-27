@@ -2,11 +2,7 @@ const formatDate = (date: Date) => {
   if (!(date instanceof Date)) {
     return ''
   }
-  const year = date.getFullYear()
-  const month = (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1)
-  const day = (date.getDate() < 10 ? '0' : '') + date.getDate()
-  const hour = (date.getHours() < 10 ? '0' : '') + date.getHours()
-  const min = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes()
-  return `${year}/${month}/${day} ${hour}:${min}`
+  const str = date.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
+  return str.slice(0, -3)
 }
 export { formatDate }
