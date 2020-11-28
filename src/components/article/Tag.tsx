@@ -3,8 +3,8 @@ import Link from 'next/link'
 export const Tag: React.FC<{ name: string; path: string }> = (props) => {
   return (
     <>
-      <Link href={props.path}>
-        <div className="link">{props.name}</div>
+      <Link href={props.path} passHref>
+        <a className="link">{props.name}</a>
       </Link>
       <style jsx>{`
         .link {
@@ -12,6 +12,7 @@ export const Tag: React.FC<{ name: string; path: string }> = (props) => {
           background-color: rgb(234, 245, 255);
           padding: 3px 8px;
           border-radius: 7px;
+          text-decoration: none;
         }
         .link:hover {
           cursor: pointer;
