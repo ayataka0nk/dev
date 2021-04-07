@@ -13,8 +13,13 @@ declare namespace JSX {
     layout?: string
     'data-share-endpoint'?: string
   }
+  interface AmpAnalytics {
+    config: string
+    'data-credentials': string
+  }
   interface IntrinsicElements {
     'amp-img': AmpImg
     'amp-social-share': AmpSocialShare
+    'amp-analytics' : AmpAnalytics
   }
 }
