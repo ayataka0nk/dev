@@ -11,18 +11,28 @@ export const ArticleList: React.FC<ArticleListProps> = (props) => {
         <div className="title">記事タイトル</div>
         <div className="published">更新日時</div>
       </div>
-      {props.matters.map((matter, index) => {
-        return (
-          <div className="article" key={index}>
-            <div className="title">
-              <Link href={matter.path} passHref>
-                {matter.title}
-              </Link>
+      {props.matters
+        .sort((a, b) => {
+          if (a.published > b.published) {
+            return -1
+          } else if (a.published < b.published) {
+            return 1
+          } else {
+            return 0
+          }
+        })
+        .map((matter, index) => {
+          return (
+            <div className="article" key={index}>
+              <div className="title">
+                <Link href={matter.path} passHref>
+                  {matter.title}
+                </Link>
+              </div>
+              <div className="published">{matter.published}</div>
             </div>
-            <div className="published">{matter.published}</div>
-          </div>
-        )
-      })}
+          )
+        })}
       <style jsx>{`
         .title {
           flex: 1;
