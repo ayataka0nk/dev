@@ -6,4 +6,4 @@ tags: next.js,amp,googleanalytics
 
 # デプロイテスト
 
-自動デプロイのテスト
+自動デプロイのテスト AA
