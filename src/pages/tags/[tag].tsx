@@ -8,7 +8,7 @@ import Head from 'next/head'
 
 export const getStaticPaths: GetStaticPaths<{ tag: string }> = async () => {
   const paths = (await readAllTags()).map((tag) => ({
-    params: { tag: tag },
+    params: { tag: encodeURIComponent(tag) },
   }))
   return {
     paths,
@@ -27,6 +27,7 @@ export const getStaticProps: GetStaticProps<
       matter.tags.includes(tag)
     )
     const tags = await readAllTags()
+    console.log(tags)
     return {
       props: { slugs, matters, tag, tags },
     }

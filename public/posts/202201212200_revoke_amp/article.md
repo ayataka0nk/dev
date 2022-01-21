@@ -2,7 +2,7 @@
 title: 当ブログから AMP を廃止する話
 published: 2022-01-21 22:13:00
 updated: 2022-01-21 22:13:00
-tags: tech,react,next.js,amp,googleanalytics
+tags: 技術,React,AMP,FoogleAnalytics
 ---
 
 # 当ブログから AMP を廃止する話
