@@ -7,6 +7,7 @@ import { formatDate } from './date'
 export type FrontMatter = {
   title: string
   published: Date
+  updated: Date
   tags: string
 }
 
@@ -26,6 +27,7 @@ export const analyzeMarkdown = async (slug: string) => {
   return {
     title: mdInfo.title,
     published: formatDate(mdInfo.published),
+    updated: formatDate(mdInfo.updated),
     tags: tags,
     content: matterResult.content,
   }
@@ -75,6 +77,7 @@ export const readMatter = async (slug: string) => {
   return {
     title: mdInfo.title,
     published: mdInfo.published,
+    updated: mdInfo.updated,
     tags: mdInfo.tags,
     path: path.join('/posts/' + slug),
   }

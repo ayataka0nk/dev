@@ -1,6 +1,7 @@
 ---
 title: 当ブログから AMP を廃止する話
 published: 2022-01-21 22:13:00
+updated: 2022-01-21 22:13:00
 tags: next.js,amp,googleanalytics
 ---
 

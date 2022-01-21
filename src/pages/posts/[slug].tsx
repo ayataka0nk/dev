@@ -21,6 +21,7 @@ type SlugProps = {
   slug: string
   title: string
   published: string
+  updated: string
   tags: string[]
   content: string
 }
@@ -37,6 +38,7 @@ export const getStaticProps: GetStaticProps<
         slug: context.params.slug,
         title: md.title,
         published: md.published,
+        updated: md.updated,
         tags: md.tags,
         content: content,
       },
@@ -48,6 +50,7 @@ export const getStaticProps: GetStaticProps<
         slug: '',
         title: '',
         published: '',
+        updated: '',
         tags: tags,
         content: '',
       },
@@ -66,6 +69,7 @@ const Slug: NextPage<SlugProps> = (props) => {
       <Article
         title={props.title}
         published={props.published}
+        updated={props.updated}
         tags={props.tags}
         content={props.content}
         url={url}

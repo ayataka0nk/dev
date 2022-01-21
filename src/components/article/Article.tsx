@@ -6,6 +6,7 @@ type ArticleProps = {
   url: string
   title: string
   published: string
+  updated: string
   tags: string[]
   content: string
 }
@@ -13,7 +14,8 @@ type ArticleProps = {
 export const Article: React.FC<ArticleProps> = (props) => {
   return (
     <div>
-      <div>更新日時: {props.published}</div>
+      <div>投稿日時: {props.published}</div>
+      <div>更新日時: {props.updated}</div>
       <ArticleContent content={props.content} />
       <hr />
       <TagsWithLabel tags={props.tags} />

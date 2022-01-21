@@ -9,7 +9,7 @@ export const ArticleList: React.FC<ArticleListProps> = (props) => {
     <div>
       <div className="article">
         <div className="title">記事タイトル</div>
-        <div className="published">更新日時</div>
+        <div className="published">投稿日時</div>
       </div>
       {props.matters
         .sort((a, b) => {
