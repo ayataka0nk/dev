@@ -27,7 +27,6 @@ export const getStaticProps: GetStaticProps<
       matter.tags.includes(tag)
     )
     const tags = await readAllTags()
-    console.log(tags)
     return {
       props: { slugs, matters, tag, tags },
     }
