@@ -1,5 +1,5 @@
 import GoogleTagManager from 'components/GoogleTagManager'
-import { AppProps } from 'next/dist/next-server/lib/router/router'
+import { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
