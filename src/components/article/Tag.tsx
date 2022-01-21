@@ -53,7 +53,6 @@ export const TagsWithLabel: React.FC<{ tags: string[] }> = (props) => {
       <style jsx>
         {`
           .tags {
-            padding: 10px 0px;
             display: flex;
             align-items: center;
           }
