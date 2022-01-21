@@ -11,7 +11,9 @@ export const makeImagePathReplacer: (dirName: string) => unified.Attacher = (
           const newNode = visit(convertCode, node, dirName)
           next(null, newNode, vfile)
         } catch (err) {
-          next(err, node, vfile)
+          if (err === null || err instanceof Error) {
+            next(err, node, vfile)
+          }
         }
       }
     }
