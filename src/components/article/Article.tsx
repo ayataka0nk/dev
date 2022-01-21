@@ -16,6 +16,9 @@ export const Article: React.FC<ArticleProps> = (props) => {
     <div>
       <div>投稿日時: {props.published}</div>
       <div>更新日時: {props.updated}</div>
+      <hr />
+      <TagsWithLabel tags={props.tags} />
+      <hr />
       <ArticleContent content={props.content} />
       <hr />
       <TagsWithLabel tags={props.tags} />
