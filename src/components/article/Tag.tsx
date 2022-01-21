@@ -13,6 +13,7 @@ export const Tag: React.FC<{ name: string; path: string }> = (props) => {
           padding: 3px 8px;
           border-radius: 7px;
           text-decoration: none;
+          white-space: nowrap;
         }
         .link:hover {
           cursor: pointer;
@@ -25,16 +26,19 @@ export const Tag: React.FC<{ name: string; path: string }> = (props) => {
 
 export const Tags: React.FC<{ tags: string[] }> = (props) => {
   return (
-    <div>
+    <div className="tags">
       {props.tags.map((tag, index) => (
-        <div className="tag" key={index}>
+        <div key={index} className="tag">
           <Tag name={tag} path={`/tags/${tag}`} />
         </div>
       ))}
       <style jsx>{`
         .tag {
-          display: inline-block;
-          margin: 0 5px;
+          padding: 10px 3px;
+        }
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
         }
       `}</style>
     </div>
