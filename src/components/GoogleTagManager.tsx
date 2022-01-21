@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 const pageview = (url: string) => {
+  console.log('pushed')
   window.dataLayer.push({
     event: 'pageview',
     page: url,

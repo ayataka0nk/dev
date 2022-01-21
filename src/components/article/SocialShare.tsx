@@ -1,58 +1,44 @@
+import React from 'react'
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  HatenaIcon,
+  HatenaShareButton,
+  LineIcon,
+  LineShareButton,
+  PocketIcon,
+  PocketShareButton,
+  TwitterIcon,
+  TwitterShareButton,
+} from 'react-share'
 type SocialSharesProps = {
   url: string
 }
 export const SocialShares: React.FC<SocialSharesProps> = (props) => {
   return (
-    <div className="social-shares">
-      <amp-social-share type="line" aria-label="Share on Line" />
-      <amp-social-share
-        type="facebook"
-        aria-label="Share on Facebook"
-        data-param-app_id="145634995501895"
-      />
-      <amp-social-share type="twitter" aria-label="Share on Twitter" />
-      <amp-social-share
-        type="hatena_bookmark"
-        aria-label="Share on Hatena"
-        layout="container"
-        data-share-endpoint={`http://b.hatena.ne.jp/entry/${props.url}`}
-      >
-        B!
-      </amp-social-share>
-      <amp-social-share
-        type="pocket"
-        aria-label="Share on Pocket"
-        layout="container"
-        data-share-endpoint="http://getpocket.com/edit?url=SOURCE_URL"
-      ></amp-social-share>
-      <style jsx>
-        {`
-          .social-shares {
-            display: flex;
-          }
-          amp-social-share {
-            margin-right: 5px;
-          }
-          amp-social-share[type='hatena_bookmark'] {
-            width: 60px;
-            height: 44px;
-            font-family: Verdana;
-            background-color: #00a4de;
-            font-weight: 700;
-            color: #fff;
-            line-height: 44px;
-            text-align: center;
-            font-size: 28px;
-          }
-          amp-social-share[type='pocket'] {
-            width: 60px;
-            height: 44px;
-            background-color: #ef3e55;
-            background-image: url('/images/pocket-logo.svg');
-            /* MIT License | https://icon.now.sh/ */
-          }
-        `}
-      </style>
+    <div>
+      <LineShareButton url={props.url} className="share">
+        <LineIcon />
+      </LineShareButton>
+      <FacebookShareButton url={props.url} className="share">
+        <FacebookIcon />
+      </FacebookShareButton>
+      <TwitterShareButton url={props.url} className="share">
+        <TwitterIcon />
+      </TwitterShareButton>
+      <HatenaShareButton url={props.url} className="share">
+        <HatenaIcon />
+      </HatenaShareButton>
+      <PocketShareButton url={props.url} className="share">
+        <PocketIcon />
+      </PocketShareButton>
+      <style jsx>{`
+        div {
+          display: flex;
+          justify-content: left;
+          gap: 10px;
+        }
+      `}</style>
     </div>
   )
 }
