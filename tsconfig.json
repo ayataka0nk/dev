@@ -14,8 +14,9 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": "./src",
-    "paths": { "rehype-highlight": ["types/rehype-highlight"] }
+    "paths": { "rehype-highlight": ["@types/rehype-highlight"] },
+    "typeRoots": ["src/@types", "node_modules/@types"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "src/**/*"],
   "exclude": ["node_modules"]
 }
