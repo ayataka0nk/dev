@@ -20,7 +20,7 @@ export const Article: React.FC<ArticleProps> = (props) => {
       <hr />
       <TagsWithLabel tags={props.tags} />
       <hr />
-      <SocialShares url={props.url} />
+      <SocialShares url={props.url} title={props.title} />
     </div>
   )
 }
