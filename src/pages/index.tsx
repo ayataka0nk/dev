@@ -6,10 +6,6 @@ import { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { Layout } from '../components/layout/Layout'
 
-export const config = {
-  amp: true,
-}
-
 export const getStaticProps: GetStaticProps = async () => {
   const slugs = readSlugs()
   const matters = await readMatters(slugs)

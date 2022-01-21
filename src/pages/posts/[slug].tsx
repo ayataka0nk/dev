@@ -7,10 +7,6 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import path from 'path'
 
-export const config = {
-  amp: true,
-}
-
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   const paths = readSlugs().map((dirname) => ({
     params: { slug: path.parse(dirname).name },

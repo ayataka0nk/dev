@@ -6,10 +6,6 @@ import { readAllTags, readMatters, readSlugs } from 'foundations/MdLoader'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 
-export const config = {
-  amp: true,
-}
-
 export const getStaticPaths: GetStaticPaths<{ tag: string }> = async () => {
   const paths = (await readAllTags()).map((tag) => ({
     params: { tag: tag },
