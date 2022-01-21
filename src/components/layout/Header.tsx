@@ -6,7 +6,7 @@ export const Header: React.FC = () => {
     <div className="header">
       <Link href="/" passHref>
         <a>
-          <div className="header-text">Naoto Kamba: Tech Blog</div>
+          <div className="header-text">Naoto Kamba: Blog</div>
         </a>
       </Link>
       <style jsx>

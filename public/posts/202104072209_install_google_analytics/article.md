@@ -2,7 +2,7 @@
 title: Amp で作成したブログページに GoogleAnalytics を設定する
 published: 2021-04-07 22:13:00
 updated: 2021-04-07 22:13:00
-tags: next.js,amp,googleanalytics
+tags: tech,react,amp,googleanalytics
 ---
 
 # Amp で作成したブログページに GoogleAnalytics を設定する
