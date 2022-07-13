@@ -172,9 +172,11 @@ export const GlobalStyles = css.global`
     box-sizing: border-box;
   }
   html {
-    background: ${theme.background.inverted};
+    background-color: ${theme.background.secondary};
+    min-height: 100vh;
   }
   body {
-    background: ${theme.background.primary};
+    background-color: ${theme.background.secondary};
+    min-height: 100vh;
   }
 `
