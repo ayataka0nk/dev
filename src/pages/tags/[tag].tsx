@@ -8,7 +8,7 @@ import Head from 'next/head'
 
 export const getStaticPaths: GetStaticPaths<{ tag: string }> = async () => {
   const paths = (await readAllTags()).map((tag) => ({
-    params: { tag: encodeURIComponent(tag) },
+    params: { tag: tag },
   }))
   return {
     paths,
