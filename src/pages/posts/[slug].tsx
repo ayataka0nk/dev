@@ -60,11 +60,12 @@ export const getStaticProps: GetStaticProps<
 
 const Slug: NextPage<SlugProps> = (props) => {
   const url = BASE_URL + '/posts' + '/' + props.slug
+  const title = props.title + '; naoto-kamba.dev'
   return (
     <Layout>
       <Head>
         <link rel="canonical" href={url} />
-        <title>{props.title}; naoto-kamba.dev</title>
+        <title>{title}</title>
       </Head>
       <Article
         title={props.title}
