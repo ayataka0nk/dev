@@ -1,11 +1,18 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { MouseEventHandler } from 'react'
 
 export const Tag: React.FC<{ name: string; path: string }> = (props) => {
+  const router = useRouter()
+  const onClick: MouseEventHandler<HTMLDivElement> = (event) => {
+    event.stopPropagation()
+    router.push(props.path)
+  }
   return (
     <>
-      <Link href={props.path} passHref>
+      <div onClick={onClick}>
         <a className="link">{props.name}</a>
-      </Link>
+      </div>
       <style jsx>{`
         .link {
           color: rgb(3, 102, 214);
