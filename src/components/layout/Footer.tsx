@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
           .footer {
             box-sizing: border-box;
             height: 56px;
-            background-color: ${theme.background.inverted};
+            background-color: ${theme.background.primary};
           }
         `}
       </style>

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { ArticleCard } from './articles/ArticleCard'
 
 type ArticleListProps = {
   matters: { title: string; published: string; tags: string[]; path: string }[]
@@ -6,44 +6,38 @@ type ArticleListProps = {
 
 export const ArticleList: React.FC<ArticleListProps> = (props) => {
   return (
-    <div>
-      <div className="article">
-        <div className="title">記事タイトル</div>
-        <div className="published">投稿日時</div>
+    <div className="root">
+      <div className="articles">
+        {props.matters
+          .sort((a, b) => {
+            if (a.published > b.published) {
+              return -1
+            } else if (a.published < b.published) {
+              return 1
+            } else {
+              return 0
+            }
+          })
+          .map((matter, index) => {
+            return (
+              <ArticleCard
+                key={index}
+                title={matter.title}
+                url={matter.path}
+                published={matter.published}
+                tags={matter.tags}
+              />
+            )
+          })}
       </div>
-      {props.matters
-        .sort((a, b) => {
-          if (a.published > b.published) {
-            return -1
-          } else if (a.published < b.published) {
-            return 1
-          } else {
-            return 0
-          }
-        })
-        .map((matter, index) => {
-          return (
-            <div className="article" key={index}>
-              <div className="title">
-                <Link href={matter.path} passHref>
-                  {matter.title}
-                </Link>
-              </div>
-              <div className="published">{matter.published}</div>
-            </div>
-          )
-        })}
       <style jsx>{`
-        .title {
-          flex: 1;
-          margin: 0 5px 0 0;
+        .root {
+          padding-top: 20px;
         }
-        .article {
-          display: flex;
-          padding: 5px 0px;
-        }
-        .published {
-          width: 100px;
+        .articles {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 10px;
         }
       `}</style>
     </div>

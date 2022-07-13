@@ -48,7 +48,6 @@ export const Tags: React.FC<{ tags: string[] }> = (props) => {
 export const TagsWithLabel: React.FC<{ tags: string[] }> = (props) => {
   return (
     <div className="tags">
-      <label>Tags:</label>
       <Tags tags={props.tags} />
       <style jsx>
         {`

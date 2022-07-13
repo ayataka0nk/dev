@@ -28,8 +28,6 @@ const Home: NextPage<HomeProps> = (props) => {
         <title>naoto-kamba.dev</title>
       </Head>
       <ArticleList matters={props.matters} />
-      <hr />
-      <TagsWithLabel tags={props.allTags} />
     </Layout>
   )
 }
