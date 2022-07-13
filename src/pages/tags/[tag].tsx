@@ -44,11 +44,12 @@ type TagsPageProps = {
 
 const TagsPage: NextPage<TagsPageProps> = (props) => {
   const url = BASE_URL + '/tags/' + props.tag
+  const title = 'naoto-kamba.dev;Tag:' + props.tag
   return (
     <Layout>
       <Head>
         <link rel="canonical" href={url} />
-        <title>naoto-kamba.dev;Tag:{props.tag}</title>
+        <title>{title}</title>
       </Head>
       <div className="selected-tag">
         <label className="label">Tag:</label>
