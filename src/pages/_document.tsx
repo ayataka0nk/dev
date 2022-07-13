@@ -16,7 +16,7 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          {/* <script
+          <script
             dangerouslySetInnerHTML={{
               __html: `
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -26,7 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-5XCJSWT');
     `,
             }}
-          /> */}
+          />
         </Head>
         <body>
           <noscript>
