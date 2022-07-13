@@ -10,8 +10,8 @@ export const Tag: React.FC<{ name: string; path: string }> = (props) => {
   }
   return (
     <>
-      <div onClick={onClick}>
-        <a className="link">{props.name}</a>
+      <div className="link" onClick={onClick}>
+        {props.name}
       </div>
       <style jsx>{`
         .link {
