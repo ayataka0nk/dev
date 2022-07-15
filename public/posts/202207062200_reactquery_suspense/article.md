@@ -11,7 +11,7 @@ tags: React,ReactQuery
 
 まだ react-query の useQueries は suspense で動かない不具合がある？らしき issue がありました。私が前やったとき動いたように感じたのは何かの間違いだったのか…？まだ自分で検証はできていませんが、とりあえずリンク張っておきます。
 
-[https://github.com/TanStack/query/issues/1523:embed:cite]
+[https://github.com/TanStack/query/issues/1523](https://github.com/TanStack/query/issues/1523)
 
 とはいえそのうち使えるようにするらしき雰囲気があるので、当記事の結論そのものに変更は無いですが。
 
@@ -24,31 +24,32 @@ React Query で Suspense モードを使うときは、並列化を想定して 
 React Query は React 用のキャッシュ管理が楽になるライブラリです。それ以上の概要については既に多くの記事があったので省きます。
 
 React Query で Suspense モードを使う場合まず公式のコレを読みましょう。
-[https://react-query.tanstack.com/guides/suspense#_top:embed:cite]
+
+[https://react-query.tanstack.com/guides/suspense#\_top](https://react-query.tanstack.com/guides/suspense#_top)
 
 では本題。React Query を使うときは useQuery 単位で抽象化しがちです。しかし React18 で Suspense と合わせて使うことを想定すると並列化において問題が生じます。それについて公式サイトは次のように言及しています。
 
-[https://react-query.tanstack.com/guides/parallel-queries:embed:cite]
+[https://react-query.tanstack.com/guides/parallel-queries](https://react-query.tanstack.com/guides/parallel-queries)
 
 > When using React Query in suspense mode, this pattern of parallelism does not work, since the first query would throw a promise internally and would suspend the component before the other queries run. To get around this, you'll either need to use the useQueries hook (which is suggested) or orchestrate your own parallelism with separate components for each useQuery instance (which is lame).
 
 要するに useQuery を連続で書くだけだと一個目の useQuery の時点でサスペンドしてしまい並列取得にならないという話です。それを解決するためには自前の並列化機構を用意するか useQueries を使うことが推奨されています。
 
-[https://react-query.tanstack.com/reference/useQueries#_top:embed:cite]
+[https://react-query.tanstack.com/reference/useQueries#\_top](https://react-query.tanstack.com/reference/useQueries#_top)
 
 useQueries は引数に QueryOptions 型の配列を取ります。QueryOptions 型についてはソースの型宣言を読むといいです。普通に使うとき node_modules 参照して読めばいいと思いますが、github でいうとこの辺です。
 
-[https://github.com/TanStack/query/blob/2d2de448c5f9ca9680b0ac5ad094fd69de0c928e/src/core/types.ts#L53:embed:cite]
+[https://github.com/TanStack/query/blob/2d2de448c5f9ca9680b0ac5ad094fd69de0c928e/src/core/types.ts#L53](https://github.com/TanStack/query/blob/2d2de448c5f9ca9680b0ac5ad094fd69de0c928e/src/core/types.ts#L53)
 
 useQuery の options 項目読んでもおそらく大体載ってます。
 
-[https://react-query.tanstack.com/reference/useQuery#_top:embed:cite]
+[https://react-query.tanstack.com/reference/useQuery#\_top](https://react-query.tanstack.com/reference/useQuery#_top)
 
 ## サンプル
 
 この方向性で作ったサンプルと一部抜粋です。
 
-[https://github.com/ayataka0nk/nextjs12-reactquery-sample:embed:cite]
+[https://github.com/ayataka0nk/nextjs12-reactquery-sample](https://github.com/ayataka0nk/nextjs12-reactquery-sample)
 
 必要に応じて QueryOptions を生成するようにして、使う側で useQuery や useQueries を選びます。使う側から staleTime や cacheTime、refetchOnMount など変更したい QueryOption があるなら createUserQueryOptions の引数で受け取るようにすれば柔軟に対応できます。
 
