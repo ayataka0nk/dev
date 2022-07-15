@@ -1,5 +1,6 @@
 import { Article } from 'components/article/Article'
 import { Layout } from 'components/layout/Layout'
+import { ProfileCard } from 'components/profile/ProfileCard'
 import { BASE_URL } from 'foundations/Constants'
 import { markdownToAmpHtml } from 'foundations/MdConverter'
 import { analyzeMarkdown, readSlugs } from 'foundations/MdLoader'
@@ -75,6 +76,7 @@ const Slug: NextPage<SlugProps> = (props) => {
         content={props.content}
         url={url}
       />
+      <ProfileCard />
     </Layout>
   )
 }

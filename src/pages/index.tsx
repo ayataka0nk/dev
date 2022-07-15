@@ -1,5 +1,6 @@
 import { Tags, TagsWithLabel } from 'components/article/Tag'
 import { ArticleList } from 'components/ArticleList'
+import { ProfileCard } from 'components/profile/ProfileCard'
 import { BASE_URL } from 'foundations/Constants'
 import { readAllTags, readMatters, readSlugs } from 'foundations/MdLoader'
 import { GetStaticProps, NextPage } from 'next'
@@ -28,6 +29,7 @@ const Home: NextPage<HomeProps> = (props) => {
         <title>naoto-kamba.dev</title>
       </Head>
       <ArticleList matters={props.matters} />
+      <ProfileCard margin="20px 0 0 0" />
     </Layout>
   )
 }

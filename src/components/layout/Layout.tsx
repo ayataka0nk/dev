@@ -1,5 +1,4 @@
 import { theme } from 'theme'
-import { Footer } from './Footer'
 import { GlobalStyles } from './GlobalStyles'
 import { Header } from './Header'
 
@@ -8,12 +7,15 @@ type LayoutProps = {
 }
 export const Layout = (props: LayoutProps) => {
   return (
-    <div>
+    <div className="root">
       <Header />
       <div className="main-box">
         <main>{props.children}</main>
       </div>
       <style jsx>{`
+        .root {
+          min-width: 300px;
+        }
         .main-box {
           background-color: ${theme.background.secondary};
         }
@@ -23,6 +25,7 @@ export const Layout = (props: LayoutProps) => {
           min-height: 700px;
           padding-left: 0px;
           padding-right: 0px;
+          margin-bottom: 20px;
         }
         @media (min-width: ${theme.media.breakpoint.sm}) {
           main {
