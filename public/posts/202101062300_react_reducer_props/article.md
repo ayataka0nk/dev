@@ -2,7 +2,7 @@
 title: ReactでuseReducerのdispatchをpropsで渡すメリットとデメリット
 published: 2021-01-06 23:00:00
 updated: 2021-01-06 23:00:00
-tags: 技術,React
+tags: React
 ---
 
 # React で useReducer の dispatch を props でどこまで流すのか。
