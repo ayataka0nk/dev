@@ -1,5 +1,4 @@
 import { TwitterIcon } from 'components/icons/TwitterIcon'
-import Image from 'next/image'
 import Link from 'next/link'
 import { theme } from 'theme'
 
@@ -11,7 +10,7 @@ export const ProfileCard = ({ margin }: ProfileCardProps) => {
     <div className="card">
       <div className="icon-name-wrapper">
         <div className="icon">
-          <Image src="/images/nekoicon.png" layout="fill" objectFit="cover" />
+          <img className="twitter-img" src="/images/nekoicon.png" />
         </div>
         <div className="info">
           <div className="name">
@@ -43,8 +42,10 @@ export const ProfileCard = ({ margin }: ProfileCardProps) => {
             margin-right: 30px;
             flex-shrink: 0;
           }
-          svg {
-            fill: red;
+          .twitter-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
           }
           .info {
           }
