@@ -2,7 +2,7 @@
 title: React-Query で Suspense モードを使う
 published: 2022-07-06 22:00:00
 updated: 2022-07-13 22:00:00
-tags: 技術,React,react-query
+tags: 技術,React,ReactQuery
 ---
 
 # React-Query で Suspense モードを使う

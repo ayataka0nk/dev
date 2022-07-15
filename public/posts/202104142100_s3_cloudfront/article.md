@@ -2,7 +2,7 @@
 title: AWS S3 + CloudFront を使って Web サイトを ホスティングする
 published: 2021-04-14 21:00:00
 updated: 2021-04-14 21:00:00
-tags: 技術,React,AWS,CloudFront
+tags: 技術,AWS,CloudFront
 ---
 
 # AWS S3 + CloudFront を使って Web サイトを ホスティングする
